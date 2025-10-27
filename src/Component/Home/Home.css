@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&family=Sacramento&family=Satisfy&display=swap");
+
+/* ===== Page Container ===== */
+.whole-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #faf8f5; /* soft beige background for the rest of the page */
+}
+
+/* ===== Video Section ===== */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full screen height */
+  overflow: hidden;
+}
+
+/* Background video */
+.bg-video {
+  position: fixed; /* keep video fixed for full-screen effect */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay content on video */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dim layer for text visibility */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  flex-direction: column;
+}
+.bg-video {
+  position: absolute; /* instead of fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* keep it above background, below text */
+}
+
+.overlay {
+  position: relative; /* above video */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+}
+
+
+/* ===== Language Button ===== */
+.lang-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "Satisfy", cursive;
+}
+
+.lang-btn:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== Wedding Text Styles ===== */
+.wedding-text {
+  max-width: 800px;
+}
+
+.couple-names {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+  font-family: "Sacramento", cursive;
+}
+
+.wedding-date {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffd700;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+  font-family: "Parisienne", cursive;
+}
+
+.wedding-desc {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-family: "Satisfy", cursive;
+}
+
+/* ===== After Video Section ===== */
+.whole-container > div:last-child {
+  background-color: #faf8f5; /* solid background color */
+  color: #333;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 4px solid #eee; /* subtle separation */
+}
+
+.whole-container > div:last-child h5 {
+  margin: 1rem 0;
+  font-family: "Satisfy", cursive;
+}
+
+/* ===== Responsive Text ===== */
+@media (max-width: 768px) {
+  .couple-names {
+    font-size: 2rem;
+  }
+  .wedding-date {
+    font-size: 1.2rem;
+  }
+  .wedding-desc {
+    font-size: 1rem;
+  }
+  .lang-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
