@@ -1,0 +1,146 @@
+.memory-container {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: #555454;
+  color: #fff;
+}
+
+.memory-title {
+  font-family: "Satisfy", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffd700;
+}
+
+.memory-template {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.memory-image img {
+  width: 500px; /* made a bit larger */
+  height: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.memories-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+/* ===== Auto-scroll animation ===== */
+.memory-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(200%);
+}
+
+.slider-track img {
+  width: 180px;
+  height: 120px;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slider-track img:hover {
+  transform: scale(1.1);
+}
+
+/* Left-to-right */
+.memory-slider.left .slider-track {
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Right-to-left */
+.memory-slider.right .slider-track {
+  animation: scroll-right 25s linear infinite;
+}
+
+/* Animations */
+@keyframes scroll-left {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== Full Image Popup ===== */
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .memory-template {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .memory-image img {
+    width: 90%;
+  }
+
+  .slider-track img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .close-btn {
+    font-size: 2rem;
+  }
+}

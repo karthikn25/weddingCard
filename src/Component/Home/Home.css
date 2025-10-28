@@ -121,7 +121,7 @@
 .whole-container > div:last-child {
   background-color: #faf8f5; /* solid background color */
   color: #333;
-  padding: 3rem 1rem;
+  /* padding: 3rem 1rem; */
   text-align: center;
   border-top: 4px solid #eee; /* subtle separation */
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import backgroundVideo from "../../assets/background.mp4";
 import weddingData from "../../assets/weddingData.json";
+import Memories from "../Memories/Memories";
 
 export default function Home() {
   // State for language
@@ -42,52 +43,7 @@ export default function Home() {
       </div>
     </div>
     <div className="">
-    <h5>ahfoadh8fd</h5>
-        <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-    <h5>ahfoadh8fd</h5>
-
+    <Memories/>
     </div>
     </div>
   );
