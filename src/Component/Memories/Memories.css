@@ -1,32 +1,56 @@
+/* ===== Base Container ===== */
 .memory-container {
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   text-align: center;
   background: #555454;
   color: #fff;
+  overflow: hidden;
 }
 
+/* ===== Title ===== */
 .memory-title {
   font-family: "Satisfy", cursive;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   color: #ffd700;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
 }
 
+/* ===== Layout ===== */
 .memory-template {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Laptop (Main) Image ===== */
+.memory-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .memory-image img {
-  width: 500px; /* made a bit larger */
-  height: 450px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
+.memory-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Right Section (Memory Sliders) ===== */
 .memories-section {
   flex: 1;
   display: flex;
@@ -35,7 +59,7 @@
   overflow: hidden;
 }
 
-/* ===== Auto-scroll animation ===== */
+/* ===== Auto Scrolling Slider ===== */
 .memory-slider {
   overflow: hidden;
   position: relative;
@@ -47,31 +71,32 @@
   width: calc(200%);
 }
 
+/* ===== Thumbnails ===== */
 .slider-track img {
-  width: 180px;
-  height: 120px;
+  width: 200px;
+  height: 130px;
   margin-right: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .slider-track img:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Left-to-right */
+/* ===== Animation Directions ===== */
 .memory-slider.left .slider-track {
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 45s linear infinite;
 }
 
-/* Right-to-left */
 .memory-slider.right .slider-track {
-  animation: scroll-right 25s linear infinite;
+  animation: scroll-right 45s linear infinite;
 }
 
-/* Animations */
+/* ===== Smooth Scroll Animations ===== */
 @keyframes scroll-left {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
@@ -101,7 +126,8 @@
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  object-fit: contain;
 }
 
 .close-btn {
@@ -112,7 +138,7 @@
   color: white;
   cursor: pointer;
   z-index: 1000;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .close-btn:hover {
@@ -124,23 +150,84 @@
   to { opacity: 1; }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* ===== Responsive Design ===== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
   .memory-template {
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
   }
 
   .memory-image img {
-    width: 90%;
+    max-width: 80%;
   }
 
   .slider-track img {
-    width: 120px;
-    height: 80px;
+    width: 160px;
+    height: 100px;
+  }
+
+  .memory-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Large Mobiles (≤768px) */
+@media (max-width: 768px) {
+  .memory-container {
+    padding: 3rem 1rem;
+  }
+
+  .memory-title {
+    font-size: 2.2rem;
+  }
+
+  .memory-image img {
+    max-width: 95%;
+    display: block;
+  }
+
+  .memories-section {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .slider-track img {
+    width: 130px;
+    height: 90px;
   }
 
   .close-btn {
     font-size: 2rem;
+  }
+}
+
+/* Small Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .memory-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .memory-template {
+    gap: 1rem;
+  }
+
+  .memory-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-track img {
+    width: 100px;
+    height: 70px;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
   }
 }
