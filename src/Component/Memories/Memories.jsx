@@ -22,15 +22,15 @@ import img18 from "../../assets/Memories/SP3.jpg";
 import img19 from "../../assets/Memories/SP4.jpg";
 import img20 from "../../assets/Memories/SP5.jpg";
 import img21 from "../../assets/Memories/KRP1.jpg";
-import img22 from "../../assets/Memories/kp2.jpg";
-import img23 from "../../assets/Memories/kp3.jpg";
-import img24 from "../../assets/Memories/kp4.jpg";
-import img25 from "../../assets/Memories/kp5.jpg";
-import img26 from "../../assets/Memories/kp1.jpg";
-import img27 from "../../assets/Memories/kp2.jpg";
-import img28 from "../../assets/Memories/kp3.jpg";
-import img29 from "../../assets/Memories/kp4.jpg";
-import img30 from "../../assets/Memories/kp5.jpg";
+import img22 from "../../assets/Memories/kp6.jpg";
+import img23 from "../../assets/Memories/kp7.jpg";
+import img24 from "../../assets/Memories/KRP2.jpg";
+import img25 from "../../assets/Memories/kp9.jpg";
+import img26 from "../../assets/Memories/kp10.jpg";
+import img27 from "../../assets/Memories/kp11.jpg";
+import img28 from "../../assets/Memories/kp12.jpg";
+import img29 from "../../assets/Memories/kp13.jpg";
+import img30 from "../../assets/Memories/kp9.jpg";
 
 export default function Memories() {
   const [selectedImage, setSelectedImage] = useState(null);
