@@ -1,0 +1,211 @@
+/* ===== Base Container ===== */
+.wishes-container {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: #555454;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ===== Title ===== */
+.wishes-title {
+  font-family: "Satisfy", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ffd700;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Layout ===== */
+.wishes-template {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Video Section ===== */
+.wishes-video {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.wishes-video video {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+  object-fit: cover;
+}
+
+/* ===== Video Controls (Outside, Centered Below) ===== */
+/* ===== Video Controls (Outside Video Centered) ===== */
+.video-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 30px; /* larger and visible */
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Play (Green) / Pause (Red) */
+.control-btn.play {
+  color: #27ae60; /* Green */
+  outline: none;
+}
+
+.control-btn.pause {
+  color: #e74c3c; /* Red */
+    outline: none;
+
+}
+
+/* Mute/Unmute */
+.control-btn.mute.off {
+  color: #f1c40f; /* Yellow when muted */
+    outline: none;
+
+}
+
+.control-btn.mute.on {
+  color: #3498db; /* Blue when unmuted */
+    outline: none;
+
+}
+
+/* Hover effect */
+/* .control-btn:hover {
+  transform: scale(1.25);
+} */
+
+/* Responsive Sizes */
+@media (max-width: 768px) {
+  .control-btn {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .control-btn {
+    font-size: 28px;
+  }
+}
+
+
+/* ===== Image Section ===== */
+.wishes-image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wishes-image img {
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.wishes-image img:hover {
+  transform: scale(1.03);
+}
+
+.wishes-text {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #ffd700;
+  font-family: "Satisfy", cursive;
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Responsive ===== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .wishes-template {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .wishes-title {
+    font-size: 2.5rem;
+  }
+
+  .wishes-video video,
+  .wishes-image img {
+    max-width: 85%;
+    height: 320px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .wishes-container {
+    padding: 3rem 1rem;
+  }
+
+  .wishes-template {
+    flex-direction: column-reverse;
+  }
+
+  .wishes-title {
+    font-size: 2.2rem;
+  }
+
+  .wishes-text {
+    font-size: 1.2rem;
+  }
+
+  .wishes-video video,
+  .wishes-image img {
+    max-width: 100%;
+    height: 260px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Small Mobiles (≤480px) */
+@media (max-width: 480px) {
+  .wishes-title {
+    font-size: 1.8rem;
+  }
+
+  .wishes-text {
+    font-size: 1rem;
+  }
+
+  .wishes-video video,
+  .wishes-image img {
+    height: 200px;
+  }
+
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}

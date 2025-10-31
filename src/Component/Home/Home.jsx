@@ -3,6 +3,7 @@ import "./Home.css";
 import backgroundVideo from "../../assets/background.mp4";
 import weddingData from "../../assets/weddingData.json";
 import Memories from "../Memories/Memories";
+import Card from "../Cards/Card";
 
 export default function Home() {
   // State for language
@@ -44,6 +45,7 @@ export default function Home() {
     </div>
     <div className="">
     <Memories/>
+     <Card/>
     </div>
     </div>
   );
