@@ -34,76 +34,91 @@
   text-align: center;
 }
 
-.wishes-video video {
+.video-wrapper {
+  position: relative;
+  display: inline-block;
   width: 100%;
   max-width: 500px;
-  height: 350px;
   border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
-  object-fit: cover;
 }
 
-/* ===== Video Controls (Outside, Centered Below) ===== */
-/* ===== Video Controls (Outside Video Centered) ===== */
-.video-controls {
-  margin-top: 1.5rem;
+.wishes-video video {
+  width: 100%;
+  height: 350px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Custom Controls ===== */
+.custom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 10px;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .custom-controls {
+  opacity: 1;
+}
+
+/* Progress Bar (YouTube style) */
+.progress-bar {
+  width: 100%;
+  appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+}
+
+/* Control Buttons Row */
+.controls-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
 }
 
 .control-btn {
   background: none;
   border: none;
   outline: none;
-  font-size: 30px; /* larger and visible */
-  cursor: pointer;
+  font-size: 22px;
   color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  user-select: none;
 }
 
-/* Play (Green) / Pause (Red) */
-.control-btn.play {
-  color: #27ae60; /* Green */
+/* Hide outline glow after click (focus ring) */
+.control-btn:focus {
   outline: none;
+  box-shadow: none;
 }
 
-.control-btn.pause {
-  color: #e74c3c; /* Red */
-    outline: none;
-
+.control-btn:hover {
+  transform: scale(1.2);
+  color: #ff0000;
 }
-
-/* Mute/Unmute */
-.control-btn.mute.off {
-  color: #f1c40f; /* Yellow when muted */
-    outline: none;
-
-}
-
-.control-btn.mute.on {
-  color: #3498db; /* Blue when unmuted */
-    outline: none;
-
-}
-
-/* Hover effect */
-/* .control-btn:hover {
-  transform: scale(1.25);
-} */
-
-/* Responsive Sizes */
-@media (max-width: 768px) {
-  .control-btn {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .control-btn {
-    font-size: 28px;
-  }
-}
-
 
 /* ===== Image Section ===== */
 .wishes-image {
@@ -138,16 +153,10 @@
 }
 
 /* ===== Responsive ===== */
-
-/* Tablets (≤1024px) */
 @media (max-width: 1024px) {
   .wishes-template {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  .wishes-title {
-    font-size: 2.5rem;
   }
 
   .wishes-video video,
@@ -157,22 +166,9 @@
   }
 }
 
-/* Mobile (≤768px) */
 @media (max-width: 768px) {
-  .wishes-container {
-    padding: 3rem 1rem;
-  }
-
   .wishes-template {
     flex-direction: column-reverse;
-  }
-
-  .wishes-title {
-    font-size: 2.2rem;
-  }
-
-  .wishes-text {
-    font-size: 1.2rem;
   }
 
   .wishes-video video,
@@ -182,30 +178,17 @@
   }
 
   .control-btn {
-    width: 40px;
-    height: 40px;
     font-size: 18px;
   }
 }
 
-/* Small Mobiles (≤480px) */
 @media (max-width: 480px) {
-  .wishes-title {
-    font-size: 1.8rem;
-  }
-
-  .wishes-text {
-    font-size: 1rem;
-  }
-
   .wishes-video video,
   .wishes-image img {
     height: 200px;
   }
 
   .control-btn {
-    width: 35px;
-    height: 35px;
     font-size: 16px;
   }
 }
