@@ -7,7 +7,7 @@ import Home from "../src/Component/Home/Home";
 
 
 function App() {
-  const targetDate = new Date("2025-11-01T12:35:00");
+  const targetDate = new Date("2025-11-03T07:30:00");
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [showCrackers, setShowCrackers] = useState(false);
   const [showRouter, setShowRouter] = useState(false);
