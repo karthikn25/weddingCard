@@ -165,7 +165,7 @@
 @media (max-width: 480px) {
   .journey-video video,
   .journey-image img {
-    height: 540px; /* Updated */
+    height: 640px; /* Updated */
   }
 
   .control-btn {
