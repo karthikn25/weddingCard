@@ -5,6 +5,7 @@ import weddingData from "../../assets/weddingData.json";
 import Memories from "../Memories/Memories";
 import Card from "../Cards/Card";
 import Footer from '../Footer/Footer';
+import Journey from "../Journey/Journey";
 
 export default function Home() {
   // State for language
@@ -45,10 +46,11 @@ export default function Home() {
       </div>
     </div>
     <div className="">
-    <Memories/>
+     <Memories/>
      <Card/>
+     <Journey/>
      <Footer/>
-    </div>
+     </div>
     </div>
   );
 }

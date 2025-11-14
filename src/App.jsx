@@ -12,7 +12,7 @@ function App() {
   const [showCrackers, setShowCrackers] = useState(false);
   const [showRouter, setShowRouter] = useState(false);
 
-  // Confetti instance
+
   const refAnimationInstance = useRef(null);
 
   const getInstance = useCallback((instance) => {
@@ -36,7 +36,7 @@ function App() {
     makeShot(0.1, { spread: 120, startVelocity: 45 });
   }, [makeShot]);
 
-  // Calculate remaining time
+
   function calculateTimeLeft() {
     const now = new Date();
     const difference = targetDate - now;
@@ -50,7 +50,7 @@ function App() {
     };
   }
 
-  // Countdown + Firework logic
+
   useEffect(() => {
     const timer = setInterval(() => {
       const updatedTime = calculateTimeLeft();
@@ -59,7 +59,7 @@ function App() {
         setShowCrackers(true);
         fire();
 
-        // Show router after 4 seconds
+        
         setTimeout(() => {
           setShowCrackers(false);
           setShowRouter(true);
@@ -72,7 +72,7 @@ function App() {
     return () => clearInterval(timer);
   }, [fire]);
 
-  // 1️⃣ Show countdown before time
+
   if (!showRouter && !showCrackers && timeLeft) {
     return (
       <div className="timer-container">
@@ -87,7 +87,7 @@ function App() {
     );
   }
 
-  // 2️⃣ Show crackers
+  
   if (showCrackers) {
     return (
       <div className="cracker-container">
